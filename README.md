@@ -1,5 +1,9 @@
 # 관리 프로그램
 
+# Web Page
+
+https://nash4826.github.io/Maxwell_system/
+
 # 현황 
 > 1. 유저 등록 함수 완료(연결리스트)
 > 2. next -> 유저 구조체 charge 변수의 값을 random함수로 무작위 숫자 (완료)! commit 보류
