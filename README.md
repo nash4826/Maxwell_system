@@ -2,12 +2,14 @@
 
 # Web Page
 
-<a href="https://nash4826.github.io/Maxwell_system/" target="_blank">Maxwell web site</a>
+[Maxwell]: https://nash4826.github.io/Maxwell_system/
 
-# 현황 
-> 1. 유저 등록 함수 완료(연결리스트)
-> 2. next -> 유저 구조체 charge 변수의 값을 random함수로 무작위 숫자 (완료)! commit 보류
-> 3. 오픈소스 parson 를 이용하여 json 파일 생성과 데이터 입력(완료) 
+# 현황
+<ol>
+  <li>유저 등록 함수 완료(연결리스트)</li>
+  <li>next -> 유저 구조체 charge 변수의 값을 random함수로 무작위 숫자 (완료)! commit 보류</li>
+  <li>오픈소스 parson 를 이용하여 json 파일 생성과 데이터 입력(완료)</li>
+</ol>
 
 
 ## 계획 변경
