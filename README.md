@@ -2,7 +2,7 @@
 
 # Web Page
 
-<a href="https://nash4826.github.io/Maxwell_system/" target="_blank">external link</a>
+<a href="https://nash4826.github.io/Maxwell_system/" target="_blank">Maxwell</a>
 
 # 현황
 <ol>
