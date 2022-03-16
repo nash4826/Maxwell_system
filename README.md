@@ -2,7 +2,7 @@
 
 # Web Page
 
-https://nash4826.github.io/Maxwell_system/
+<a href="https://nash4826.github.io/Maxwell_system/" target="_blank">Maxwell</a>
 
 # 현황 
 > 1. 유저 등록 함수 완료(연결리스트)
