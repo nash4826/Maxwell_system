@@ -1,0 +1,19 @@
+.header-text {
+  background-color: #9adcff;
+  color: #fff;
+  padding: 1% 3%;
+}
+#status-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ess {
+  height: 300px;
+  width: 300px;
+}
+
+.power-status {
+  height: 500px;
+  width: 500px;
+}

@@ -4,10 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>전력 현황</title>
 </head>
 <body>
-  작업중
+
+  <header>
+    <h1 class="header-text">Energy</h1>
+  </header>
+
+  <section id="status-box">
+    <!--소비 전력 막대그래프-->
+
+
+    <!--가정용으로 제작? 아님 공장, 빌딩용?-->
+    <div class="status">
+      <h2 class="status-heading">전력 상태</h2>
+      <p>누적 전력량 : <span></span> kWh</p>
+      <p>주파수 : <span></span> Hz</p>
+      <p>평균 선간전압 : <span></span> V</p>
+      <p>평균 상전압 : <span></span> V</p>
+      <p>평균 전류 : <span></span> A</p>
+      <p>온도 : <span></span> 도</p>
+      <p>평균 역률 : <span></span></p>
+      <p>평균 유효전력 : <span></span> kW</p>
+      <p>평균 무효전력 : <span></span> kVar</p>
+    </div>
+
+    <div class="ess">
+      <h2 class="ess-heading">ESS 충전 현황</h2>
+      <p>ESS 최대 용량 : 12.8 kWh</p>
+      <p>충전량 : <span class="ess-charge-number"></span> kWh</p>
+      <canvas id="ess-graph" class="ess-status"></canvas>
+    </div>
+  </section>
+  
+
+  <script src="state.js"></script>
+
 </body>
 </html>
