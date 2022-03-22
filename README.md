@@ -30,11 +30,14 @@ C 언어로만 관리 시스템을 만들 계획이었으나, 유저 친화적�
 ## 기술
 
 FrontEnd : html,css,js
+
 FrontEnd-framework : Bootstrap
+
 BackEnd : js or python
 
-<ol> 
 opensource :
+
+<ol> 
   <li>chart.js : https://github.com/chartjs/Chart.js</li>
   <li>parson : https://github.com/kgabis/parson</li>
 </ol>
