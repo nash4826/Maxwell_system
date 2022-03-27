@@ -1,3 +1,7 @@
+
+fetch("/c_json/status.json").then((response) => response.json()).then((json) => console.log(json));
+
+
 /*ESS 충전 그래프 */
 const ctx = document.getElementById("ess-graph");
 const essData = {

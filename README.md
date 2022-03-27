@@ -10,6 +10,7 @@ https://nash4826.github.io/Maxwell_system/
   <li>css 리팩토링, html 클래스명 짓기 완료.(03-19)</li>
   <li>전력 현황 페이지 chart.js 활용하여 작업중 (03-22 ~ )</li>
   <li>c_json 파일 작업, 컴파일 완료 (03-27)</li>
+  <li>json 파일에 있는 한글이 깨지는 현상 발생(수정중)</li>
 </ol>
 
 ## 계획 변경
