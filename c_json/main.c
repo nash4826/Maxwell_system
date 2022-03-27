@@ -1,30 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include "user.h"
+#include <stdbool.h>
+#include <time.h>
+#include "menu.h"
+#include "json.h"
 
-/*
-	1. 유저 등록(연결리스트로 구현) check!
-
-	2. 유저 구조체 요소 중 charge 를 random 함수로 에너지 저장량 구현 
-
-*/
-
-int main() 
-{
-	unsigned int num;
-	List list;
-	ListInit(&list);
-	ListAdd(&list, generatorUser);
-	ListAdd(&list, generatorUser);
-	ListAdd(&list, generatorUser);
-	ListAdd(&list, generatorUser);
-
-	ListDelete(&list, 56);
-
-	User* temp = UserSearch(&list, 34);
-	printInformation(temp);
-	
+int main()
+{	
+	int select_num = menu();
+	char name[20];
+	if (select_num == 1) {
+		printf("이름을 입력하세요 : ");
+		scanf("%s", name);
+		init_Information_json(name);
+		printf("JSON 파일 작성 완료!\n");
+	}
+	else {
+		system("cls");
+		reset_status_json();
+		printStatus();
+		printf("reset 완료");
+	}
 	return 0;
 }
-

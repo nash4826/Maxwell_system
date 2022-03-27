@@ -7,11 +7,9 @@ https://nash4826.github.io/Maxwell_system/
 # 현황
 
 <ol>
-  <li>유저 등록 함수 완료(연결리스트) => 활용 여부 보류</li>
-  <li>유저 구조체 charge 변수의 값을 random함수로 무작위 숫자 할당 (테스트 완료) => commit 보류</li>
-  <li>오픈소스 parson 를 이용하여 json 파일 생성과 데이터 입력(테스트 완료) => parson.c, parson.h commit</li>
   <li>css 리팩토링, html 클래스명 짓기 완료.(03-19)</li>
   <li>전력 현황 페이지 chart.js 활용하여 작업중 (03-22 ~ )</li>
+  <li>c_json 파일 작업, 컴파일 완료 (03-27)</li>
 </ol>
 
 ## 계획 변경
