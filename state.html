@@ -5,13 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/electricStateStyle.css">
   <title>전력 현황</title>
 </head>
 <body>
 
-  <header>
+  <header id="header">
     <h1 class="header-text">Energy</h1>
+    <p class="clock">00:00:00</p>
   </header>
 
   <section id="status-box">
@@ -41,7 +42,7 @@
   </section>
   
 
-  <script src="state.js"></script>
-
+  <script src="js/state.js"></script>
+  <script src="js/clock.js"></script>
 </body>
 </html>
