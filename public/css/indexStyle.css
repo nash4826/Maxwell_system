@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&family=Montserrat:wght@100;400;900&family=Nanum+Gothic:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap");
+:root {
+  --Montserrat: "Montserrat", sans-serif;
+  --Ubuntu: "Ubuntu", sans-serif;
+  --Gugi: "Gugi", cursive;
+  --Black-Han-Sans: "Black Han Sans", sans-serif;
+  --Nanum-Gothic: "Nanum Gothic", sans-serif;
+}
+body {
+  font-family: var(--Montserrat);
+}
+
+/* title */
+
+#title {
+  background-color: #cc9544;
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+.title-heading {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+/* Navigation bar */
+.navbar {
+  padding: 0 0 4.5rem;
+}
+.navbar-brand {
+  font-family: var(--Ubuntu);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: var(--Gugi);
+}
+
+
+/* Login */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin .id {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin .password {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* features */
+#features {
+  padding: 7% 15%;
+  background: #fff;
+}
+
+.features-box {
+  text-align: center;
+  padding: 5%;
+}
+.feature-heading {
+  font-family: var(--Black-Han-Sans);
+  font-size: 2rem;
+}
+
+.feature-text {
+  color: #8f8f8f;
+  font-family: var(--Nanum-Gothic);
+  font-size: 1.5rem;
+}
+
+.icon {
+  color: #cc9544;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #603601;
+}
+
+/*testimonials*/
+
+#testimonials {
+  background-color: #cc9544;
+  color: #fff;
+  text-align: center;
+}
+
+.testimonial-text {
+  font-family: var(--Nanum-Gothic);
+  line-height: 1.5;
+  margin-bottom: 5%;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.carousel-item {
+  padding: 7% 15%;
+}
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+}
