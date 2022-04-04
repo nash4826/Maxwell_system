@@ -11,6 +11,7 @@ https://nash4826.github.io/Maxwell_system/
   <li>전력 현황 페이지 chart.js 활용하여 작업중 (03-22 ~ )</li>
   <li>c_json 파일 작업, 컴파일 완료 (03-27)</li>
   <li>json 파일에 있는 한글이 깨지는 현상 발생(수정중)</li>
+  <li>express를 설치 및 간단한 get 매서드 사용.</li>
 </ol>
 
 ## blueprint
@@ -28,7 +29,7 @@ FrontEnd : html,css,js
 
 FrontEnd-framework : Bootstrap
 
-BackEnd : js or python
+BackEnd : js(express)
 
 opensource :
 
@@ -44,3 +45,14 @@ opensource :
 > 2. 실시간 동기화 문제
 >
 > 3. 데이터를 수집하기 위해서는 IoT 디바이스와 데이터를 수집할 환경이 필요하나, 현실적으로 어려움을 느껴 간단한 rand 함수로 대체.
+
+## 어려움
+
+1. 서버에 대한 지식이 부족하다.
+
+   > get,post를 이용하여 Page를 불러오고, bodyParser를 통해 로그인 폼의 데이터를 출력하는 단계까지 진행했으나 express, 서버에 대한 깊은 개념은 이해 하기 어려웠다.
+
+2. 오픈 API 호출할 때 매커니즘을 완벽히 이해하기 어려웠다.
+
+   > API 문서에 나와있는 요구사항을 토대로 작업하는데 시행착오를 많이 겪었다. (mailchimp)
+   > js의 지식이 많이 부족하다는 것을 깨달았다.
