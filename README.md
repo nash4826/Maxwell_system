@@ -2,6 +2,8 @@
 
 # Web Page
 
+<strong>express 작업중</strong>
+
 https://nash4826.github.io/Maxwell_system/
 
 # 현황
@@ -24,6 +26,8 @@ https://nash4826.github.io/Maxwell_system/
 6. 전력 거래 페이지에서 카카오 결제 API 활용(테스트 고려중)
 
 ## 기술
+
+C language
 
 FrontEnd : html,css,js
 
