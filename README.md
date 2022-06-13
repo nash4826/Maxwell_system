@@ -4,7 +4,7 @@
 
 <strong>express 작업중</strong>
 
-https://nash4826.github.io/Maxwell_system/
+https://power-management.herokuapp.com/
 
 # 현황
 
@@ -15,6 +15,9 @@ https://nash4826.github.io/Maxwell_system/
   <li>json 파일에 있는 한글이 깨지는 현상 발생(영어 변환 완료)</li>
   <li>express를 설치 및 간단한 get 매서드 사용.</li>
   <li>파일 구조를 전부 수정함. template를 'html'로 사용. </li>
+  <li>json파일을 읽어와 innerText를 이용하여 값 할당</li>
+  <li>임시 배포 완료</li>
+
   <li>login form 제작중(우선 프레임만)</li>
 </ol>
 
@@ -25,7 +28,7 @@ https://nash4826.github.io/Maxwell_system/
 3. 클라이언트가 서버에게 json 요청
 4. 서버는 클라이언트에 json 전달
 5. json의 데이터를 화면에 출력
-6. 전력 거래 페이지에서 카카오 결제 API 활용(테스트 고려중)
+6. 전력 거래 페이지에서 카카오 결제 API 활용 고려(테스트 고려중)
 
 ## 기술
 
@@ -56,9 +59,4 @@ opensource :
 
 1. 서버에 대한 지식이 부족하다.
 
-   > get,post를 이용하여 Page를 불러오고, bodyParser를 통해 로그인 폼의 데이터를 출력하는 단계까지 진행했으나 express, 서버에 대한 깊은 개념은 이해 하기 어려웠다.
-
-2. 오픈 API 호출할 때 매커니즘을 완벽히 이해하기 어려웠다.
-
-   > API 문서에 나와있는 요구사항을 토대로 작업하는데 시행착오를 많이 겪었다. (mailchimp)
-   > js의 지식이 많이 부족하다는 것을 깨달았다.
+   > get,post를 이용하여 Page를 불러오고, bodyParser를 통해 로그인 폼의 데이터를 출력하는 단계까지 진행했으나 express, 서버에 대한 깊은 개념은 이해 하기 어려웠다.네트워크가 중요한 것 같다.
