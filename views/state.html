@@ -11,7 +11,7 @@
 <body>
 
   <header id="header">
-    <h1 class="header-text">Energy</h1>
+    <h1 class="header-text"><a href="/">Energy</a></h1>
     <p class="clock">00:00:00</p>
   </header>
 
@@ -22,15 +22,15 @@
     <!--가정용으로 제작? 아님 공장, 빌딩용?-->
     <div class="status">
       <h2 class="status-heading">전력 상태</h2>
-      <p>누적 전력량 : <span></span> kWh</p>
-      <p>주파수 : <span></span> Hz</p>
-      <p>평균 선간전압 : <span></span> V</p>
-      <p>평균 상전압 : <span></span> V</p>
-      <p>평균 전류 : <span></span> A</p>
-      <p>온도 : <span></span> 도</p>
-      <p>평균 역률 : <span></span></p>
-      <p>평균 유효전력 : <span></span> kW</p>
-      <p>평균 무효전력 : <span></span> kVar</p>
+      <p>누적 전력량 : <span class="kWh"></span> kWh</p>
+      <p>주파수 : <span class="Hz"></span> Hz</p>
+      <p>평균 선간전압 : <span class="LV"></span> V</p>
+      <p>평균 상전압 : <span class="PV"></span> V</p>
+      <p>평균 전류 : <span class="AC"></span> A</p>
+      <p>온도 : <span class="temp"></span> 도</p>
+      <p>평균 역률 : <span class="cos"></span> %</p>
+      <p>평균 유효전력 : <span class="realP"></span> kW</p>
+      <p>평균 무효전력 : <span class="reactiveP"></span> kVar</p>
     </div>
 
     <div class="ess">
@@ -41,7 +41,7 @@
     </div>
   </section>
   
-
+  
   <script src="js/state.js"></script>
   <script src="js/clock.js"></script>
 </body>

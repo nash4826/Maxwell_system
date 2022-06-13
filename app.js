@@ -6,12 +6,15 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.get("/",function(req,res){
-  res.sendFile(`${__dirname}/index.html`);
+  res.render('index');
 });
 
 app.get('/state.html',function(req,res){
-  res.sendFile(`${__dirname}/state.html`);
+  res.render('state');
 })
 
 app.listen(3000,function(){

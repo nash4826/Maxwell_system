@@ -1,4 +1,4 @@
-# 관리 프로그램
+# 관리 프로그램 (Prototype)
 
 # Web Page
 
@@ -9,11 +9,13 @@ https://nash4826.github.io/Maxwell_system/
 # 현황
 
 <ol>
-  <li>css 리팩토링, html 클래스명 짓기 완료.(03-19)</li>
-  <li>전력 현황 페이지 chart.js 활용하여 작업중 (03-22 ~ )</li>
-  <li>c_json 파일 작업, 컴파일 완료 (03-27)</li>
-  <li>json 파일에 있는 한글이 깨지는 현상 발생(수정중)</li>
+  <li>css 리팩토링, html 클래스명 짓기 완료.</li>
+  <li>전력 현황 페이지 chart.js 활용하여 작업중 </li>
+  <li>c_json 파일 작업, 컴파일 완료</li>
+  <li>json 파일에 있는 한글이 깨지는 현상 발생(영어 변환 완료)</li>
   <li>express를 설치 및 간단한 get 매서드 사용.</li>
+  <li>파일 구조를 전부 수정함. template를 'html'로 사용. </li>
+  <li>login form 제작중(우선 프레임만)</li>
 </ol>
 
 ## blueprint

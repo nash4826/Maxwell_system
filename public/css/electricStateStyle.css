@@ -24,6 +24,11 @@ body {
   justify-content: space-between;
   padding: 1% 3%;
 }
+.header-text a{
+  cursor: pointer;
+  color:#fff;
+  text-decoration: none;
+}
 .clock {
   font-size: 30px;
   font-family: var(--Nanum-Gothic);
@@ -35,9 +40,11 @@ body {
 #status-box {
   background-color: var(--background-section);
   display: flex;
+  flex: 1;
   flex-direction: row;
-  justify-content: space-around;
   padding: 2%;
+  min-height: 800px;
+  height: 100%;
 }
 
 .status {
@@ -47,6 +54,7 @@ body {
   padding: 2%;
   width: 320px;
   height: 400px;
+  margin: auto;
 }
 .status-heading {
   margin: 0;
@@ -64,6 +72,7 @@ body {
   height: 500px;
   width: 350px;
   padding: 3% 3%;
+  margin: auto;
 }
 
 .power-status {

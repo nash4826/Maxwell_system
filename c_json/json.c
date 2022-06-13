@@ -5,99 +5,97 @@
 #include <math.h>
 #include "parson.h"
 #include "json.h"
-/*ÃÊ±â Àü¾Ð,Àü·ù,¿ª·ü µîÀÇ °ªÀº °íÁ¤µÈ °ªÀ¸·Î fix*/
+/*ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ fix*/
 
-
-void init_Information_json(char* name)
+void init_Information_json(char *name)
 {
-	JSON_Value* rootValue;
-	JSON_Object* rootObject;
+	JSON_Value *rootValue;
+	JSON_Object *rootObject;
 
 	rootValue = json_value_init_object();
 	rootObject = json_value_get_object(rootValue);
 
-	json_object_set_string(rootObject, "ÀÌ¸§", name);
-	json_object_set_number(rootObject, "´©ÀûÀü·Â·®",100);
-	json_object_set_number(rootObject, "ÁÖÆÄ¼ö", 60);
-	json_object_set_number(rootObject, "Æò±Õ¼±°£Àü¾Ð", 380);
-	json_object_set_number(rootObject, "Æò±Õ»óÀü¾Ð", 220);
-	json_object_set_number(rootObject, "Æò±ÕÀü·ù", 10);
-	json_object_set_number(rootObject, "¿Âµµ", 50);
-	json_object_set_number(rootObject, "Æò±Õ¿ª·ü", 99);
-	json_object_set_number(rootObject, "Æò±ÕÀ¯È¿Àü·Â", 80);
-	json_object_set_number(rootObject, "Æò±Õ¹«È¿Àü·Â", 60);
+	json_object_set_string(rootObject, "name", name);
+	json_object_set_number(rootObject, "accumulated_power", 100);
+	json_object_set_number(rootObject, "frequency", 60);
+	json_object_set_number(rootObject, "line_voltage", 380);
+	json_object_set_number(rootObject, "phase_voltage", 220);
+	json_object_set_number(rootObject, "average_current", 10);
+	json_object_set_number(rootObject, "temperature", 50);
+	json_object_set_number(rootObject, "power_factor", 99);
+	json_object_set_number(rootObject, "real_power", 80);
+	json_object_set_number(rootObject, "reactive_power", 60);
 	json_object_set_number(rootObject, "ESS", 10);
 	json_serialize_to_file_pretty(rootValue, "status.json");
 
 	json_value_free(rootValue);
-
 }
 
 void reset_status_json()
 {
-	JSON_Value* rootValue;
-	JSON_Object* rootObject;
+	JSON_Value *rootValue;
+	JSON_Object *rootObject;
 	srand(time(NULL));
 	rootValue = json_parse_file("status.json");
 	rootObject = json_value_get_object(rootValue);
 
-	//´©ÀûÀü·Â·®
-	double accumulated_power = json_object_get_number(rootObject, "´©ÀûÀü·Â·®");
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½
+	double accumulated_power = json_object_get_number(rootObject, "accumulated_power");
 	accumulated_power += 5;
-	//À¯È¿Àü·Â, ¹«È¿Àü·Â, ÇÇ»óÀü·Â, ¿ª·ü ¼øÀ¸·Î
-	double real_power = json_object_get_number(rootObject, "Æò±ÕÀ¯È¿Àü·Â");
-	real_power = rand() % (100 - 90 + 1) + 90; //90~100kw ¹üÀ§ ·£´ý
-	
-	double reactive_power = json_object_get_number(rootObject, "Æò±Õ¹«È¿Àü·Â");
+	//ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½, ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	double real_power = json_object_get_number(rootObject, "real_power");
+	real_power = rand() % (100 - 90 + 1) + 90; // 90~100kw ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+	double reactive_power = json_object_get_number(rootObject, "reactive_power");
 	reactive_power = rand() % (10 - 1 + 1) + 1;
-	
+
 	double apparent_Power = sqrt(pow(real_power, 2) + pow(reactive_power, 2));
 	double power_factor = (real_power / apparent_Power) * 100;
-	
-	//ess ¹èÅÍ¸® ÃæÀü·®
+
+	// ess ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	double ess = json_object_get_number(rootObject, "ESS");
 	const int add_charging_ess = rand() % (10 - 1 + 1) + 1;
-	
-	if ((ess + add_charging_ess) > 100) {
+
+	if ((ess + add_charging_ess) > 100)
+	{
 		ess = 100;
 	}
-	else {
+	else
+	{
 		ess += add_charging_ess;
 	}
-	
-	
-	json_object_set_number(rootObject, "´©ÀûÀü·Â·®", accumulated_power);
-	json_object_set_number(rootObject, "Æò±Õ¼±°£Àü¾Ð", 380);
-	json_object_set_number(rootObject, "Æò±Õ»óÀü¾Ð", 220);
-	json_object_set_number(rootObject, "Æò±ÕÀü·ù", 10);
-	json_object_set_number(rootObject, "¿Âµµ", 50);
-	json_object_set_number(rootObject, "Æò±Õ¿ª·ü", power_factor);
-	json_object_set_number(rootObject, "Æò±ÕÀ¯È¿Àü·Â", real_power);
-	json_object_set_number(rootObject, "Æò±Õ¹«È¿Àü·Â", reactive_power);
+
+	json_object_set_number(rootObject, "accumulated_power", accumulated_power);
+	json_object_set_number(rootObject, "line_voltage", 380);
+	json_object_set_number(rootObject, "phase_voltage", 220);
+	json_object_set_number(rootObject, "average_current", 10);
+	json_object_set_number(rootObject, "temperature", 50);
+	json_object_set_number(rootObject, "power_factor", power_factor);
+	json_object_set_number(rootObject, "real_power", real_power);
+	json_object_set_number(rootObject, "reactive_power", reactive_power);
 	json_object_set_number(rootObject, "ESS", ess);
-	
+
 	json_serialize_to_file_pretty(rootValue, "status.json");
 
 	json_value_free(rootValue);
-
 }
 
 void printStatus()
 {
-	JSON_Value* rootValue;
-	JSON_Object* rootObject;
+	JSON_Value *rootValue;
+	JSON_Object *rootObject;
 
 	rootValue = json_parse_file("status.json");
 	rootObject = json_value_get_object(rootValue);
 
-	printf("ÀÌ¸§ : %s\n", json_object_get_string(rootObject, "ÀÌ¸§"));
-	printf("´©ÀûÀü·Â·® : %.1f [kWh]\n", json_object_get_number(rootObject, "´©ÀûÀü·Â·®"));
-	printf("Æò±Õ¼±°£Àü¾Ð : %.1f [kV]\n", json_object_get_number(rootObject, "Æò±Õ¼±°£Àü¾Ð"));
-	printf("Æò±Õ»óÀü¾Ð : %.1f [kV]\n", json_object_get_number(rootObject, "Æò±Õ»óÀü¾Ð"));
-	printf("Æò±ÕÀü·ù : %.2f [mA]\n", json_object_get_number(rootObject, "Æò±ÕÀü·ù"));
-	printf("¿Âµµ : %.1f [µµ]\n", json_object_get_number(rootObject, "¿Âµµ"));
-	printf("Æò±Õ¿ª·ü : %.2f [%%]\n", json_object_get_number(rootObject, "Æò±Õ¿ª·ü"));
-	printf("Æò±ÕÀ¯È¿Àü·Â : %.1f [kw]\n", json_object_get_number(rootObject, "Æò±ÕÀ¯È¿Àü·Â"));
-	printf("Æò±Õ¹«È¿Àü·Â : %.1f [kvar]\n", json_object_get_number(rootObject, "Æò±Õ¹«È¿Àü·Â"));
+	printf("name : %s\n", json_object_get_string(rootObject, "name"));
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ : %.1f [kWh]\n", json_object_get_number(rootObject, "accumulated_power"));
+	printf("ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : %.1f [kV]\n", json_object_get_number(rootObject, "line_voltage"));
+	printf("ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ : %.1f [kV]\n", json_object_get_number(rootObject, "phase_voltage"));
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : %.2f [mA]\n", json_object_get_number(rootObject, "average_current"));
+	printf("ï¿½Âµï¿½ : %.1f [ï¿½ï¿½]\n", json_object_get_number(rootObject, "temperature"));
+	printf("ï¿½ï¿½Õ¿ï¿½ï¿½ï¿½ : %.2f [%%]\n", json_object_get_number(rootObject, "power_factor"));
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ : %.1f [kw]\n", json_object_get_number(rootObject, "real_power"));
+	printf("ï¿½ï¿½Õ¹ï¿½È¿ï¿½ï¿½ï¿½ï¿½ : %.1f [kvar]\n", json_object_get_number(rootObject, "reactive_power"));
 	printf("ESS : %.1f [%%]\n", json_object_get_number(rootObject, "ESS"));
 }
