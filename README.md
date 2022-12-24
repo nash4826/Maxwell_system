@@ -4,7 +4,8 @@
 
 <strong>express 작업중</strong>
 
-https://power-management.herokuapp.com/
+<!-- https://power-management.herokuapp.com/ -->
+heroku 유료화로 웹호스팅 찾는중..
 
 # 현황
 
